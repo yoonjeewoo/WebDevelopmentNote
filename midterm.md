@@ -493,3 +493,189 @@ selector1 > selector2 {
 }
 ```
 - applies the given properties to selector2 only if it is directly inside a selector1 on the page (selector2 tag is immediately inside selector1 with no tags in between)
+
+### CSS properties for borders
+
+```css
+h2 { border: 5px solid red; }
+h2 {
+  border-left: thick dotted #CC0088;
+  border-bottom-color: rgb(0, 128, 128);
+  border-bottom-style: double;
+}
+```
+- border-color, border-width, border-style	
+- border-bottom, border-left, border-right, border-top
+- border-bottom-color, border-bottom-style, border-bottom-width, border-left-color, border-left-style, border-left-width, border-right-color, border-right-style, border-right-width, border-top-color, border-top-style, border-top-width
+
+### Rounded corners with border-radius
+
+```css
+p {
+  border: 3px solid blue;
+  border-radius: 12px;
+  padding: 0.5em;
+}
+```
+
+### CSS properties for padding
+
+```css
+p { padding: 20px; border: 3px solid black; }
+h2 { padding: 0px; background-color: yellow; }
+
+p {
+  padding-left: 200px; padding-top: 30px;
+  background-color: fuchsia;
+}
+```
+
+### CSS properties for margins
+
+```css
+p {
+  margin: 50px;
+  background-color: fuchsia;
+}
+p {
+  margin-left: 8em;
+  background-color: fuchsia;
+}
+```
+
+### CSS properties for dimensions
+
+```css
+p { width: 350px; background-color: yellow; }
+h2 { width: 50%; background-color: aqua; }
+```
+
+### Centering a block element: auto margins
+
+```css
+p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 750px;
+}
+```
+
+### The CSS float property (reference)
+
+- **float** : side to hover on; can be left, right, or none (default)
+
+### The clear property
+
+```css
+p { background-color: fuchsia; }
+h2 { clear: right; background-color: yellow; }
+
+div#sidebar { float: right; }
+p { clear: right; }
+```
+
+- **clear** : disallows floating elements from overlapping this element. can be left, right, both, or none (default)
+
+### The overflow property
+
+- **forever** : specifies what to do if an element's content is too large. can be auto, visible, hidden, or scroll
+
+```css
+p { border: 2px dashed black; overflow: hidden; }
+```
+
+### Multi-column layouts
+
+```html
+<div>
+  <p>the first paragraph</p>
+  <p>the second paragraph</p>
+  <p>the third paragraph</p>
+  Some other text that is important
+</div>
+```
+```css
+p { float: right; width: 20%; margin: 0.5em;
+    border: 2px solid black; }
+div { border: 3px dotted green; overflow: hidden; }
+```
+
+### The position property (examples)
+
+```css
+div#ad {
+  position: fixed;
+  right: 10%;
+  top: 45%;
+}
+```
+
+### Absolute positioning
+
+```css
+#menubar {
+  position: absolute;
+  left: 400px;
+  top: 50px;
+}
+```
+- removed from normal flow (like floating ones)
+- positioned relative to the block element containing them (assuming that block also uses `absolute` or `relative` positioning)
+- actual position determined by `top`, `bottom`, `left`, `right` values
+- should often specify a `width` property as well
+
+### Relative positioning
+
+```css
+#area2 { position: relative; }
+```
+- absolute-positioned elements are normally positioned at an offset from the corner of the overall web page
+- to instead cause the absolute element to position itself relative to some other element's corner, wrap the `absolute` element in an element whose `position` is `relative`
+
+### Positioning Rule
+
+1. if possible, lay out an element by aligning its content
+	- horizontal alignment: text-align
+	- set this on a block element; it aligns the content within it (not the block 		element itself)
+	- vertical alignment: vertical-align
+	- set this on an inline element, and it aligns it vertically within its 		containing element
+2. if alignment won't work, try floating the element
+3. if floating won't work, try positioning the element
+	- absolute/fixed positioning are a last resort and should not be overused
+
+### The vertical-align property
+
+- vertical-align : specifies where an inline element should be aligned vertically, with respect to other content on the same line within its block element's box
+- top, middle, bottom, baseline (default), sub, super, text-top, text-bottom, or a length value or %
+
+```html
+<p style="background-color: yellow;">
+<span style="vertical-align: top; border: 1px solid red;">
+Don't be sad!  Turn that frown
+<img src="images/sad.jpg" alt="sad" /> upside down!
+<img style="vertical-align: bottom" src="images/smiley.jpg" alt="smile" />
+Smiling burns calories, you know.
+<img style="vertical-align: middle" src="images/puppy.jpg" alt="puppy" />
+Anyway, look at this cute puppy; isn't he adorable!  So cheer up,
+and have a nice day.  The End.
+</span></p>
+```
+
+### The display property
+
+- display : sets the type of CSS box model an element is displayed with
+- none, inline, block, run-in, compact, ...
+
+```css
+h2 { display: inline; background-color: yellow; }
+```
+
+### The opacity property
+
+```css
+body     { background-image: url("images/marty-mcfly.jpg"); background-repeat: repeat; }
+p        { background-color: yellow; margin: 0; padding: 0.25em; }
+p.mcfly1 { opacity: 0.75; }
+p.mcfly2 { opacity: 0.50; }
+p.mcfly3 { opacity: 0.25; }
+```
